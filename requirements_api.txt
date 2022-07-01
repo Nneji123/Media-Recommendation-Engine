@@ -8,5 +8,8 @@ tmdbv3api==1.7.7
 uvicorn
 httptools
 gunicorn
-spotipy
-streamlit
+numpy==1.23.0
+pandas==1.4.3
+Pillow==9.2.0
+spotipy==2.20.0
+streamlit==1.10.0

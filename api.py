@@ -39,8 +39,13 @@ class MovieAPI(BaseModel):
     movie: str
 
 
-@app.post("/movie")
+@app.post("/movie",summary="This endpoint recommends movies based on the movie genre and name.")
 async def movie(data: MovieAPI):
+    """
+    
+    
+    
+    """
     results = recommend_movie(data.movie)
     return {"data": results}
 
@@ -50,8 +55,14 @@ class AnimeAPI(BaseModel):
     anime: str
 
 
-@app.post("/anime")
+@app.post("/anime", summary="This endpoint recommends anime based on the anime genre and name.")
 async def anime(data: AnimeAPI):
+    """
+    
+    
+    
+    
+    """
     results = recommend_anime(data.anime)
     return {"data": results}
 
@@ -60,9 +71,13 @@ class MusicAPI(BaseModel):
     music: list
 
 
-@app.post("/music")
+@app.post("/music", summary='This endpoint suggests songs from user input')
 async def music(data: MusicAPI):
     """
+    This endpoint takes the following input
+    name: Name of the Song
+    year:Year the song was released\n
+
     example input to test this route of the API:
             {
         "music": [
