@@ -17,4 +17,4 @@ RUN pip install -r requirements_api.txt
 
 COPY . .
 
-CMD uvicorn api:app --reload 
+CMD uvicorn api:app --reload --port 5000
