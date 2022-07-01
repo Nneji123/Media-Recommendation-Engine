@@ -8,3 +8,5 @@ tmdbv3api==1.7.7
 uvicorn
 httptools
 gunicorn
+spotipy
+streamlit
