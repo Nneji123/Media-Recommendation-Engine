@@ -4,14 +4,17 @@ import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
+from scipy.spatial.distance import cdist
 
 import warnings
 warnings.filterwarnings("ignore")
 
+from collections import defaultdict
 import difflib
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from collections import defaultdict
+import os
 
 data = pd.read_csv("./data/music.zip")
 SPOTIFY_CLIENT_ID='e6090eb5945b4d7c95d9160a1197a3ec'
