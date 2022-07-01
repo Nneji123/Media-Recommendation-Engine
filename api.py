@@ -26,7 +26,5 @@ Note: add "/docs" to the URL to get the Swagger UI Docs or "/redoc"
 @app.post("/movie")
 async def movie(data: MovieAPI):
     results = recommendation(data.movie)
-async def movie(data:str):
-    results = recommendation(data)
     return {"data":results}
 
