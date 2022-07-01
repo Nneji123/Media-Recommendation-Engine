@@ -17,4 +17,4 @@ RUN pip install -r requirements_api.txt
 
 COPY . .
 
-CMD uvicorn api:app --reload --port 5000
+CMD gunicorn -w 3 -k uvicorn.workers.UvicornWorker app:app --bind 0.0.0.0:$PORT
