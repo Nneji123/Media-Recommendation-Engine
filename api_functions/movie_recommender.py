@@ -34,7 +34,7 @@ def movieiden(str):
 
 
 # This function take movie name from user, and return 10 similar type of movies.
-def recommendation(str):
+def recommend_movie(str):
        title = str
        title = title.lower()
             # create count matrix from this new combined column
@@ -65,7 +65,6 @@ def recommendation(str):
            suggested_movie_list.append(df_movies['title'][movie_index])
        new_list_rec = []
        for j in range(len(suggested_movie_list)):
-         new_list_rec.append(movieiden(suggested_movie_list[j]))
          new_list_rec.append(suggested_movie_list[j])
 
        return new_list_rec
