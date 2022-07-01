@@ -1,0 +1,1 @@
+convert all the zip files to parquet files so as to save memory.
