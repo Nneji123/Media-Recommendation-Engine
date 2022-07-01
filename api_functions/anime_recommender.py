@@ -44,5 +44,4 @@ def recommend_anime(str):
     new_list_rec = []
     for j in range(len(suggested_movie_list)):
         new_list_rec.append(suggested_movie_list[j])
-
     return new_list_rec

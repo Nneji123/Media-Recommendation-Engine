@@ -4,33 +4,11 @@ import pandas as pd
 import requests
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from tmdbv3api import Movie, TMDb
-import imdb
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
 df_movies = pd.read_csv('./data/movie.zip')
 movie_list = list(df_movies['title'])
-
-# creating TMDB Api Object
-#later we'll use for other needs
-#tmdb = TMDb()
-#tmdb.api_key = '62fd9021dbeec142016bbfc8e3888baf'
-
-#Function for movie id of any Movie
-def movieiden(str):
-  ia = imdb.IMDb()
-  title = str
-  title.lower()
-# searching the name
-  search = ia.search_movie(title)
-
-# loop for printing the name and id
-  for i in range((1)):
-    # getting the id
-    id = search[i].movieID
-  # printing it
-    return (id)
 
 
 # This function take movie name from user, and return 10 similar type of movies.
