@@ -1,7 +1,6 @@
 # Importing the necessary libraries
 from difflib import get_close_matches
 import pandas as pd
-import requests
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer

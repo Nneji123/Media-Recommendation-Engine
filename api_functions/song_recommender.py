@@ -8,7 +8,6 @@ from sklearn.pipeline import Pipeline
 import warnings
 warnings.filterwarnings("ignore")
 
-from collections import defaultdict
 import difflib
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
