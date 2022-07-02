@@ -12,6 +12,7 @@ cos_similarity = linear_kernel(tfidf_matrix, tfidf_matrix)
 
 indices=pd.Series(df.index,index=df['game_name'])
 titles=df['game_name']
+
 def recommend_game(title):
     idx = indices[title]
     similarity_scores = list(enumerate(cos_similarity[idx]))
