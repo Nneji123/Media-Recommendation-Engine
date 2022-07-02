@@ -10,7 +10,7 @@ from api_functions.song_recommender import recommend_songs
 from api_functions.book_recommender import recommend_book
 from api_functions.game_recommender import recommend_game
 from api_functions.manga_recommender import recommend_manga
-from api_functions.manga_recommender import recommend_comics
+from api_functions.comic_recommender import recommend_comics
 
 app = FastAPI(
     title="Recommendation Engine API",
