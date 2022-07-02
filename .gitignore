@@ -162,3 +162,4 @@ cython_debug/
 # Zip files for the data
 *.zip
 .vercel
+kaggle.json

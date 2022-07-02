@@ -6,11 +6,11 @@ import pandas as pd
 from api_functions.movie_recommender import recommend_movie
 from api_functions.anime_recommender import recommend_anime
 from api_functions.song_recommender import recommend_songs
-
+from api_functions.book_recommender import recommend_book
 
 app = FastAPI(
     title="Recommendation Engine API",
-    description="""An API that utilises machine learning algorithms to recommends movies, anime, music, favourite restaurants using machine learning.""",
+    description="""An API that utilises machine learning algorithms to recommends movies, anime, music, books and comics.""",
     version="0.0.1", debug=True)
 
 
@@ -83,4 +83,19 @@ async def music(data: MusicAPI):
     """
     df = pd.read_parquet('./data/music.parquet', engine='fastparquet')
     results = recommend_songs(data.music, df)
+    return {"data": results}
+
+
+# Books Endpoint
+
+class BooksAPI(BaseModel):
+    book: str
+
+@app.post("/books", summary='This endpoint suggests books from user input')
+async def music(data: BooksAPI):
+    """
+    This endpoint takes the following input
+    name: Name of the book
+    """
+    results = recommend_book(data.book)
     return {"data": results}
