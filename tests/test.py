@@ -8,6 +8,7 @@ class PerformanceTests(HttpUser):
 
     @task(1)
     def API(self):
-        sample = {"game":"Call of Duty"}
+        value = "Call of Duty"
+        sample = {"game":value}
         #headers = {'Accept': 'application/json', 'Content-Type': 'application/json'}
-        test = re.post("http://localhost:8501/games", json=sample)
+        test = re.post(f"http://localhost:8501/games", json=sample)
