@@ -25,9 +25,11 @@ async def favicon():
 
 
 @app.get("/", response_class=PlainTextResponse)
-async def running():
+async def home():
     note = """
 Recommendation Engine API 🙌🏻
+
+This API recommends content such as games, movies, music, books and even anime!
 
 Note: add "/docs" to the URL to get the Swagger UI Docs or "/redoc"
   """
