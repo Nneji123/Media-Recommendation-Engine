@@ -6,8 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
-df_anime = pd.read_csv('./data/anime.zip')
-df_anime=df_anime.to_parquet('output.parquet')
+df_anime = pd.read_parquet('./data/anime.parquet')
 movie_list = list(df_anime['name'])
 
 
