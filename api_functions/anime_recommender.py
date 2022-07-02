@@ -6,7 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
-df_anime = pd.read_parquet('./data/anime.parquet')
+df_anime = pd.read_parquet('./data/anime.parquet', engine='fastparquet')
 movie_list = list(df_anime['name'])
 
 

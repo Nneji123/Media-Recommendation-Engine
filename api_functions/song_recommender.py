@@ -16,7 +16,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from collections import defaultdict
 import os
 
-data = pd.read_parquet("./data/music.parquet")
+data = pd.read_parquet("./data/music.parquet", engine=fastparquet)
 SPOTIFY_CLIENT_ID='e6090eb5945b4d7c95d9160a1197a3ec'
 SPOTIFY_CLIENT_SECRET='2565c2508a03440194270d8d4030f622'
 
