@@ -4,13 +4,7 @@ from typing import Optional, List
 from pydantic import BaseModel
 import pandas as pd
 from functions.models import *
-from functions.movie_recommender import recommend_movie
-from functions.anime_recommender import recommend_anime
-from functions.song_recommender import recommend_songs
-from functions.book_recommender import recommend_book
-from functions.game_recommender import recommend_game
-from functions.manga_recommender import recommend_manga
-from functions.comic_recommender import recommend_comics
+from functions.functions import *
 
 app = FastAPI(
     title="Recommendation Engine API",
