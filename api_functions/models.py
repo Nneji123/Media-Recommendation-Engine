@@ -24,3 +24,8 @@ class GamesAPI(BaseModel):
 
 class MangaAPI(BaseModel):
     manga: str
+
+
+class ComicsAPI(BaseModel):
+    comic: str
+

@@ -10,6 +10,7 @@ from api_functions.song_recommender import recommend_songs
 from api_functions.book_recommender import recommend_book
 from api_functions.game_recommender import recommend_game
 from api_functions.manga_recommender import recommend_manga
+from api_functions.manga_recommender import recommend_comics
 
 app = FastAPI(
     title="Recommendation Engine API",
@@ -124,10 +125,22 @@ async def games(data: GamesAPI):
 
 
 @app.post("/manga", summary="This endpoint recommends manga from user input")
-async def games(data: MangaAPI):
+async def manga(data: MangaAPI):
     """
     This endpoint takes the following input
     name: Name of the manga
     """
     results = recommend_manga(data.manga)
+    return {"data": results}
+
+# Comics API Route
+
+
+@app.post("/comics", summary="This endpoint recommends marvel comics from user input")
+async def comics(data: ComicsAPI):
+    """
+    This endpoint takes the following input
+    name: Name of the manga
+    """
+    results = recommend_comics(data.comic)
     return {"data": results}
