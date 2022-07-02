@@ -3,14 +3,14 @@ from fastapi.responses import FileResponse, PlainTextResponse
 from typing import Optional, List
 from pydantic import BaseModel
 import pandas as pd
-from api_functions.models import *
-from api_functions.movie_recommender import recommend_movie
-from api_functions.anime_recommender import recommend_anime
-from api_functions.song_recommender import recommend_songs
-from api_functions.book_recommender import recommend_book
-from api_functions.game_recommender import recommend_game
-from api_functions.manga_recommender import recommend_manga
-from api_functions.comic_recommender import recommend_comics
+from functions.models import *
+from functions.movie_recommender import recommend_movie
+from functions.anime_recommender import recommend_anime
+from functions.song_recommender import recommend_songs
+from functions.book_recommender import recommend_book
+from functions.game_recommender import recommend_game
+from functions.manga_recommender import recommend_manga
+from functions.comic_recommender import recommend_comics
 
 app = FastAPI(
     title="Recommendation Engine API",
