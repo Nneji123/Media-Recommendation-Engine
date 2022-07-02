@@ -163,3 +163,4 @@ cython_debug/
 *.zip
 .vercel
 kaggle.json
+.gitpod.yml
