@@ -1,6 +1,7 @@
 fastapi==0.78.0
 pandas==1.4.3
 pyarrow
+fastparquet
 pydantic==1.9.1
 requests==2.28.0
 scikit_learn==1.1.1
@@ -8,7 +9,6 @@ uvicorn
 httptools
 gunicorn
 numpy==1.23.0
-pandas==1.4.3
 Pillow==9.2.0
 spotipy==2.20.0
 streamlit

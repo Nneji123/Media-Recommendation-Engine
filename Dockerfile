@@ -13,7 +13,7 @@ RUN pip install --upgrade setuptools
     
 
 COPY requirements_api.txt .
-RUN pip install -r requirements_api.txt
+RUN pip install -r requirements.txt
 
 COPY . .
 
