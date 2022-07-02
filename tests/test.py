@@ -1,6 +1,5 @@
 import json
 from locust import HttpUser, task, between
-from functions.functions import *
 import requests as re
 
 class PerformanceTests(HttpUser):
