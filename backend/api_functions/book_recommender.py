@@ -19,6 +19,7 @@ xdfbooks_famous = xdfbooks_rating[xdfbooks_rating['Book-Title'].isin(xdfbooks_po
 
 xdf_pivot = xdfbooks_famous.pivot_table(index='Book-Title', columns='User-ID', values='Book-Rating')
 xdf_pivot.fillna(0, inplace=True)
+similarity_score = cosine_similarity(xdf_pivot)
 
 # Input the Name of Book While it returns the Similar Book Name
 # with its respective information like Author Name and Image URL
