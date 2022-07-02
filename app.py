@@ -7,6 +7,7 @@ from api_functions.movie_recommender import recommend_movie
 from api_functions.anime_recommender import recommend_anime
 from api_functions.song_recommender import recommend_songs
 from api_functions.book_recommender import recommend_book
+from api_functions.game_recommender import recommend_game
 
 app = FastAPI(
     title="Recommendation Engine API",
@@ -98,4 +99,18 @@ async def music(data: BooksAPI):
     name: Name of the book
     """
     results = recommend_book(data.book)
+    return {"data": results}
+
+# Spotify Music API Route
+class GamesAPI(BaseModel):
+    game: str
+
+
+@app.post("/games", summary='This endpoint suggests games from user input')
+async def games(data: GamesAPI):
+    """
+    This endpoint takes the following input
+    name: Name of the game
+    """
+    results = recommend_game(data.game)
     return {"data": results}
