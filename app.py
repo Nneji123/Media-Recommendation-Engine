@@ -70,8 +70,8 @@ async def anime(data: AnimeAPI):
 # Spotify Music API Route
 
 
-@app.post("/music", summary="This endpoint recommends songs from user input")
-async def music(data: MusicAPI):
+@app.post("/songs", summary="This endpoint recommends songs from user input")
+async def songs(data: SongsAPI):
     """
     This endpoint takes the following input
     name: Name of the Song
@@ -79,7 +79,7 @@ async def music(data: MusicAPI):
 
     example input to test this route of the API:
             {
-        "music": [
+        "songs": [
             {"name": "Come As You Are", "year":1991}
         ]
         }

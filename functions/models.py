@@ -10,7 +10,7 @@ class AnimeAPI(BaseModel):
     anime: str
 
 
-class MusicAPI(BaseModel):
+class SongsAPI(BaseModel):
     music: list
 
 

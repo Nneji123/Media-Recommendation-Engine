@@ -163,3 +163,4 @@ cython_debug/
 .vercel
 kaggle.json
 .gitpod.yml
+.vscode/
