@@ -23,31 +23,44 @@ import os
 
 
 def recommend_anime(str):
+    """This function performs the following actions:
+    1. Reads the anime.parquet file and gets the correct title name using difflib.
+    2. Create count matrix from this new combined column.
+    3. Compute the cosine similarity.
+    4. Get the index value of given anime title.
+    5. Pairwise similarity scores of all animes with that anime.
+    6. Sort the anime based on similarity scores.
+    7. Suggested anime are stored into a list.
+
+
+    Args:
+        param1: takes one input of type string
+
+    Returns:
+        list: Returns a list of similar anime from the dataset.
+
+    """
     df_anime = pd.read_parquet('./data/anime.parquet', engine='fastparquet')
     movie_list = list(df_anime['name'])
     title = str
     title = title.lower()
-    # create count matrix from this new combined column
+    
     tfidf = TfidfVectorizer()
     tfidf_matrix = tfidf.fit_transform(df_anime['genre'].values.astype('U'))
 
-    # now compute the cosine similarity
     cos_similarity = linear_kernel(tfidf_matrix, tfidf_matrix)
 
-    # correcting user input spell (close match from our movie list)
     correct_title = get_close_matches(
         title, movie_list, n=3, cutoff=0.3)[0]
 
-    # get the index value of given movie title
     idx = df_anime['name'][df_anime['name']
                            == correct_title].index[0]
 
-    # pairwise similarity scores of all movies with that movie
     sim_score = list(enumerate(cos_similarity[idx]))
-    # sort the movie based on similarity scores
+    # 
     sim_score = sorted(
         sim_score, key=lambda x: x[1], reverse=True)[0:15]
-    # suggested movies are storing into a list
+    
     suggested_movie_list = []
     for i in sim_score:
         movie_index = i[0]

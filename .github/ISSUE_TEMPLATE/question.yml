@@ -9,19 +9,6 @@ body:
 
         Please follow these instructions, fill every question, and do every step. 🙏
 
-        I'm asking this because answering questions and solving problems in GitHub issues is what consumes most of the time.
-
-        I end up not being able to add new features, fix bugs, review pull requests, etc. as fast as I wish because I have to spend too much time handling issues.
-
-        All that, on top of all the incredible help provided by a bunch of community members, the [FastAPI Experts](https://fastapi.tiangolo.com/fastapi-people/#experts), that give a lot of their time to come here and help others.
-
-        That's a lot of work they are doing, but if more FastAPI users came to help others like them just a little bit more, it would be much less effort for them (and you and me 😅).
-
-        By asking questions in a structured way (following this) it will be much easier to help you.
-
-        And there's a high chance that you will find the solution along the way and you won't even have to submit it and wait for an answer. 😎
-
-        As there are too many issues with questions, I'll have to close the incomplete ones. That will allow me (and others) to focus on helping people like you that follow the whole process and help us help you. 🤓
   - type: checkboxes
     id: checks
     attributes:
