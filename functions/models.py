@@ -28,4 +28,3 @@ class MangaAPI(BaseModel):
 
 class ComicsAPI(BaseModel):
     comic: str
-

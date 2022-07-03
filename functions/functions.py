@@ -1,5 +1,6 @@
 # Importing the necessary libraries
 import os
+from decouple import config
 from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy
 import difflib
@@ -334,8 +335,8 @@ def recommend_movie(str):
 
 
 data = pd.read_parquet("./data/music.parquet", engine="fastparquet")
-SPOTIFY_CLIENT_ID = 'e6090eb5945b4d7c95d9160a1197a3ec'
-SPOTIFY_CLIENT_SECRET = '2565c2508a03440194270d8d4030f622'
+SPOTIFY_CLIENT_ID = config('SPOTIFY_CLIENT_ID')
+SPOTIFY_CLIENT_SECRET = config('SPOTIFY_CLIENT_SECRET')
 
 song_cluster_pipeline = Pipeline([('scaler', StandardScaler()),
                                   ('kmeans', KMeans(n_clusters=20,
@@ -420,6 +421,7 @@ def flatten_dict_list(dict_list):
 
 def recommend_songs(song_list, spotify_data, n_songs=10):
     """
+    To use this function properly make sure you set the environment variables in the .env file.
     This function performs the following actions:
     1. Gets the mean vector of the song list.
     2. Gets the mean vector of the song cluster.
