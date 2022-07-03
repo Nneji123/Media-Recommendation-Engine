@@ -8,7 +8,7 @@ from functions.functions import *
 
 app = FastAPI(
     title="Recommendation Engine API",
-    description="""An API that utilises machine learning algorithms to recommends movies, anime, music, books and comics.""",
+    description="""An API that utilises machine learning algorithms to recommends movies, anime, music, books, comics, manga and games.""",
     version="0.0.1",
     debug=True,
 )
