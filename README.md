@@ -1,54 +1,43 @@
 # Media Recommendation Engine API
-![](file:///RecommendationEngine.png)
+<a href="https://codecov.io/gh/tiangolo/fastapi" target="_blank">
+    <img src="https://cdn.activestate.com/wp-content/uploads/2019/12/RecommendationEngine.png" alt="Coverage">
+</a>
 <p align="center">
-    <em>Media Recommendation Engine, an API that recommends content based on user input</em>
+    <em>Media Recommendation Engine, an API that recommends content such as movies, tv shows, anime, songs etc. Built with FastAPI.</em>
 </p>
 <p align="center">
 
 <a href="https://codecov.io/gh/tiangolo/fastapi" target="_blank">
-    <img src="https://img.shields.io/codecov/c/github/Nneji123/Media-Recommendation-Engine?color=%2334D058" alt="Coverage">
+    <img src="https://img.shields.io/badge/Python-darkblue.svg?style=flat&logo=python&logoColor=white" alt="Coverage">
+</a>
+<a href="https://pypi.org/project/fastapi" target="_blank">
+    <img src="https://img.shields.io/badge/sklearn-darkorange.svg?style=flat&logo=scikit-learn&logoColor=white" alt="Supported Python versions">
+</a>
+<a href="https://pypi.org/project/fastapi" target="_blank">
+    <img src="https://img.shields.io/badge/FastAPI-darkgreen.svg?style=flat&logo=fastapi&logoColor=white" alt="Supported Python versions">
 </a>
 <a href="https://pypi.org/project/fastapi" target="_blank">
     <img src="https://img.shields.io/pypi/pyversions/fastapi.svg?color=%2334D058" alt="Supported Python versions">
 </a>
+<a href="https://pypi.org/project/fastapi" target="_blank">
+    <img src="https://img.shields.io/badge/Docker-blue?style=flat&logo=docker&logoColor=white" alt="Supported Python versions">
+</a>
+<a href="https://pypi.org/project/fastapi" target="_blank">
+    <img src="https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat" alt="Supported Python versions">
+</a>
+<a href="https://pypi.org/project/fastapi" target="_blank">
+    <img src="https://img.shields.io/github/repo-size/Nneji123/Media-Recommendation-Engine" alt="Supported Python versions">
+</a>
 </p>
 
-[![Language](https://img.shields.io/badge/Python-darkblue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
-[![Framework](https://img.shields.io/badge/sklearn-darkorange.svg?style=flat&logo=scikit-learn&logoColor=white)](http://www.pytorch.org/news.html)
-[![Framework](https://img.shields.io/badge/FastAPI-darkgreen.svg?style=flat&logo=fastapi&logoColor=white)](https://lung-cancer-api.herokuapp.com/docs)
-[![Framework](https://img.shields.io/badge/Streamlit-red.svg?style=flat&logo=streamlit&logoColor=white)](https://share.streamlit.io/nneji123/lung-cancer-prediction/main)
-![Docker](https://img.shields.io/badge/Docker-blue?style=flat&logo=docker&logoColor=white)
-![build](https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat)
-![reposize](https://img.shields.io/github/repo-size/Nneji123/Media-Recommendation-Engine)
-
-## Problem Statement
-Credit card fraud is an inclusive term for fraud committed using a payment card, such as a credit card or debit card. The purpose may be to obtain goods or services or to make payment to another account, which is controlled by a criminal.
- 
-**This Streamlit App utilizes a Machine Learning model served as an API with FastAPI framework in order to detect fraudulent credit card transactions  based on the following criteria: hours, type of transaction, amount, balance before and after transaction etc.**
-
-The machine learning model used for this web application was deployed as an API using the FastAPI framework and then accessed through a frontend interface with Streamlit.
-
-The App can be viewed [through this link](https://share.streamlit.io/nneji123/credit-card-fraud-detection/main)
 
 
-The API and its documentation can be viewed [here](https://credit-fraud-ml-api.herokuapp.com/docs) or [here.](https://credit-fraud-ml-api.herokuapp.com/redoc)
 
 ## Data Preparation
 
-Publicly accessible datasets on financial services are scarce, particularly in the newly growing field of mobile money transfers. Many scholars, like us who conduct research in the field of fraud detection, value financial datasets. Because financial transactions are inherently private, there are no publicly accessible datasets, which contributes to the problem. 
 
-A synthetic dataset generated using the simulator called PaySim was used as the dataset for building the model used in this project. PaySim uses aggregated data from the private dataset to generate a synthetic dataset that resembles the normal operation of transactions and injects malicious behaviour to later evaluate the performance of fraud detection methods.
-
-[Dataset Link](https://www.kaggle.com/datasets/ealaxi/paysim1v)
 
 ### Modelling
-In this project 2 different classification algorithms were tested namely:
-
-- Logistic Regression
-- Random Forest
-
-The final model used for the API was the **Random Forest Classifier** model which had an accuracy score of 0.99 and an F1 score of 0.86.
-
 
 ## Preview
 
