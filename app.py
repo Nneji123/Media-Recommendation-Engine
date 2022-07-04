@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.responses import FileResponse, PlainTextResponse
+from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional, List
 from pydantic import BaseModel
 import pandas as pd
@@ -11,6 +12,16 @@ app = FastAPI(
     description="""An API that utilises machine learning algorithms to recommends movies, anime, music, books, comics, manga and games.""",
     version="0.0.1",
     debug=True,
+)
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 

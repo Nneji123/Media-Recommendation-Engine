@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for your interest in FastAPI! 🚀
+        Thanks for your interest in Media-Recommendation-Engine! 🚀
 
         Please follow these instructions, fill every question, and do every step. 🙏
 
@@ -19,17 +19,17 @@ body:
           required: true
         - label: I used the GitHub search to find a similar issue and didn't find it.
           required: true
-        - label: I searched the FastAPI documentation, with the integrated search.
+        - label: I searched the Media-Recommendation-Engine documentation, with the integrated search.
           required: true
-        - label: I already searched in Google "How to X in FastAPI" and didn't find any information.
+        - label: I already searched in Google "How to X in Media-Recommendation-Engine" and didn't find any information.
           required: true
         - label: I already read and followed all the tutorial in the docs and didn't find an answer.
           required: true
-        - label: I already checked if it is not related to FastAPI but to [Pydantic](https://github.com/samuelcolvin/pydantic).
+        - label: I already checked if it is not related to Media-Recommendation-Engine but to [Pydantic](https://github.com/samuelcolvin/pydantic).
           required: true
-        - label: I already checked if it is not related to FastAPI but to [Swagger UI](https://github.com/swagger-api/swagger-ui).
+        - label: I already checked if it is not related to Media-Recommendation-Engine but to [Swagger UI](https://github.com/swagger-api/swagger-ui).
           required: true
-        - label: I already checked if it is not related to FastAPI but to [ReDoc](https://github.com/Redocly/redoc).
+        - label: I already checked if it is not related to Media-Recommendation-Engine but to [ReDoc](https://github.com/Redocly/redoc).
           required: true
   - type: checkboxes
     id: help
@@ -55,9 +55,9 @@ body:
         If I (or someone) can copy it, run it, and see it right away, there's a much higher chance I (or someone) will be able to help you.
 
       placeholder: |
-        from fastapi import FastAPI
+        from Media-Recommendation-Engine import Media-Recommendation-Engine
 
-        app = FastAPI()
+        app = Media-Recommendation-Engine()
 
 
         @app.get("/")
@@ -99,16 +99,16 @@ body:
       label: Operating System Details
       description: You can add more details about your operating system here, in particular if you chose "Other".
   - type: input
-    id: fastapi-version
+    id: Media-Recommendation-Engine-version
     attributes:
-      label: FastAPI Version
+      label: Media-Recommendation-Engine Version
       description: |
-        What FastAPI version are you using?
+        What Media-Recommendation-Engine version are you using?
 
-        You can find the FastAPI version with:
+        You can find the Media-Recommendation-Engine version with:
 
         ```bash
-        python -c "import fastapi; print(fastapi.__version__)"
+        python -c "import Media-Recommendation-Engine; print(Media-Recommendation-Engine.__version__)"
         ```
     validations:
       required: true
