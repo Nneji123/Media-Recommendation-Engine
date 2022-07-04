@@ -3,6 +3,7 @@ version: "3.7"
 services:
   backend:
     build: backend
+    image: nneji123/backend
     ports:
       - 8000:8000
     networks: 

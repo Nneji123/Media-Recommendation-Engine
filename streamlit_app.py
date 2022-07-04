@@ -24,22 +24,25 @@ try:
     st.set_option('deprecation.showPyplotGlobalUse', False)
     
     # Main panel setup
-    display_app_header(main_txt='Data Quality Wrapper',
+    display_app_header(main_txt='Media Recommendation App',
                        sub_txt='Clean, describe, visualise and select data for AI models')
     
     st.markdown("""---""")
     
-    st.write('Welcome to the DQW! An app for automated preprocessing of data.')
+    st.write('Welcome to the MRA! An app for getting media recommendations!')
     
     st.write('Please select the data format/app section you want to use below. ',
     'Due to the multifunctionality of this app, we have split it into five.',
     'This is the main app. Have fun!')
     
     # provide options to user to navigate to other dqw apps
-    app_section_button('[Image Data Section 🖼️](https://share.streamlit.io/soft-nougat/dqw-ivves_images/main/app.py)',
-    '[Tabular Data Section 🏗️](https://share.streamlit.io/soft-nougat/dqw-ivves_structured/main/app.py)',
-    '[Audio Data Section 🎶](https://share.streamlit.io/soft-nougat/dqw-ivves_audio/main/app.py)',
-    '[Text Data Section 📚](https://share.streamlit.io/soft-nougat/dqw-ivves_text/main/app.py)')
+    app_section_button('[Movie Recommendations 🖼️](https://share.streamlit.io/soft-nougat/dqw-ivves_images/main/app.py)',
+    '[Music Recommendations 🎶](https://share.streamlit.io/soft-nougat/dqw-ivves_structured/main/app.py)',
+    '[Game Recommendations 🎮](https://share.streamlit.io/soft-nougat/dqw-ivves_audio/main/app.py)',
+    '[Anime Recommendations 📚](https://share.streamlit.io/soft-nougat/dqw-ivves_text/main/app.py)',
+    '[Comics Recommendations 🎶](https://share.streamlit.io/soft-nougat/dqw-ivves_audio/main/app.py)',
+    '[Manga Recommendations 🎶](https://share.streamlit.io/soft-nougat/dqw-ivves_audio/main/app.py)',
+    '[Book Recommendations 🎶](https://share.streamlit.io/soft-nougat/dqw-ivves_audio/main/app.py)')
     st.markdown("""---""")
 
     intro_text = """
