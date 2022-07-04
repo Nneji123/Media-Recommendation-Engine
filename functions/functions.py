@@ -39,7 +39,7 @@ def recommend_anime(str):
         list: Returns a list of similar anime from the dataset.
 
     """
-    df_anime = pd.read_parquet('./data/anime.parquet', engine='fastparquet')
+    df_anime = pd.read_parquet('./data/anime.parquet', engine='fastparquet', columns=['name', 'genre'])
     movie_list = list(df_anime['name'])
     title = str
     title = title.lower()
