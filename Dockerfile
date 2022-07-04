@@ -17,6 +17,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-EXPOSE 5000
-
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "5000"]
+CMD gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:app --bind 0.0.0.0:$PORT

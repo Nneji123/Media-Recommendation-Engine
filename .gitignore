@@ -164,3 +164,4 @@ cython_debug/
 kaggle.json
 .gitpod.yml
 .vscode/
+.pem
