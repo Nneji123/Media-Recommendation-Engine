@@ -1,7 +1,20 @@
-version: '3.4'
+version: "3.7"
 
 services:
-  media-recommendation-engine:
-    build: .
+  backend:
+    build: backend
     ports:
       - 8000:8000
+    networks: 
+      AIservice: 
+        aliases: 
+          - backend.docker
+    volumes:
+      - ./backend:/app
+      - ./storage:/storage
+
+
+
+networks:
+  AIservice:
+    external: true

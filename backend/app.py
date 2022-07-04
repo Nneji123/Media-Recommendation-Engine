@@ -1,20 +1,27 @@
 from fastapi import FastAPI
 from fastapi.responses import FileResponse, PlainTextResponse
+from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional, List
 from pydantic import BaseModel
 import pandas as pd
-from api_functions.movie_recommender import recommend_movie
-from api_functions.anime_recommender import recommend_anime
-from api_functions.song_recommender import recommend_songs
-from api_functions.book_recommender import recommend_book
-from api_functions.game_recommender import recommend_game
-from api_functions.manga_recommender import recommend_manga
+from functions.models import *
+from functions.functions import *
 
 app = FastAPI(
     title="Recommendation Engine API",
-    description="""An API that utilises machine learning algorithms to recommends movies, anime, music, books and comics.""",
+    description="""An API that utilises machine learning algorithms to recommends movies, anime, music, books, comics, manga and games.""",
     version="0.0.1",
     debug=True,
+)
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
@@ -43,21 +50,11 @@ Note: add "/docs" to the URL to get the Swagger UI Docs or "/redoc"
 
 # Movie API Route
 
-
-class RecommenderAPI(BaseModel):
-    movie: str
-    anime: str
-    music: list
-    book: str
-    game: str
-    manga: str
-
-
 @app.post(
     "/movie",
     summary="This endpoint recommends movies based on the movie genre and name.",
 )
-async def movie(data: RecommenderAPI):
+async def movie(data: MovieAPI):
     """
     This endpoint takes only one input, name of the movie.
     """
@@ -72,7 +69,7 @@ async def movie(data: RecommenderAPI):
     "/anime",
     summary="This endpoint recommends anime based on the anime genre and name.",
 )
-async def anime(data: RecommenderAPI):
+async def anime(data: AnimeAPI):
     """
     This endpoint takes only one input, name of the anime.
 
@@ -84,8 +81,8 @@ async def anime(data: RecommenderAPI):
 # Spotify Music API Route
 
 
-@app.post("/music", summary="This endpoint recommends songs from user input")
-async def music(data: RecommenderAPI):
+@app.post("/songs", summary="This endpoint recommends songs from user input")
+async def songs(data: SongsAPI):
     """
     This endpoint takes the following input
     name: Name of the Song
@@ -93,7 +90,7 @@ async def music(data: RecommenderAPI):
 
     example input to test this route of the API:
             {
-        "music": [
+        "songs": [
             {"name": "Come As You Are", "year":1991}
         ]
         }
@@ -107,7 +104,7 @@ async def music(data: RecommenderAPI):
 
 
 @app.post("/books", summary="This endpoint recommends books from user input")
-async def music(data: RecommenderAPI):
+async def music(data: BookAPI):
     """
     This endpoint takes the following input
     name: Name of the book
@@ -120,7 +117,7 @@ async def music(data: RecommenderAPI):
 
 
 @app.post("/games", summary="This endpoint recommends games from user input")
-async def games(data: RecommenderAPI):
+async def games(data: GamesAPI):
     """
     This endpoint takes the following input
     name: Name of the game
@@ -133,10 +130,22 @@ async def games(data: RecommenderAPI):
 
 
 @app.post("/manga", summary="This endpoint recommends manga from user input")
-async def games(data: RecommenderAPI):
+async def manga(data: MangaAPI):
     """
     This endpoint takes the following input
     name: Name of the manga
     """
     results = recommend_manga(data.manga)
+    return {"data": results}
+
+# Comics API Route
+
+
+@app.post("/comics", summary="This endpoint recommends marvel comics from user input")
+async def comics(data: ComicsAPI):
+    """
+    This endpoint takes the following input
+    name: Name of the manga
+    """
+    results = recommend_comics(data.comic)
     return {"data": results}
