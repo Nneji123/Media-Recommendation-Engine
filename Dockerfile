@@ -18,4 +18,6 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
+EXPOSE 8081
+
 CMD ["uvicorn", "app:app", "--reload", "--port", "8081"]
