@@ -21,8 +21,6 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-
-
 def recommend_anime(str):
     """This function performs the following actions:
     1. Reads the anime.parquet file and gets the correct title name using difflib.
@@ -41,7 +39,8 @@ def recommend_anime(str):
         list: Returns a list of similar anime from the dataset.
 
     """
-    df_anime = pd.read_parquet('./data/anime.parquet', engine='fastparquet', columns=["name","genre"])
+    df_anime = pd.read_parquet(
+        './data/anime.parquet', engine='fastparquet', columns=["name", "genre"])
     movie_list = list(df_anime['name'])
     title = str
     title = title.lower()
@@ -49,7 +48,8 @@ def recommend_anime(str):
     tfidf = TfidfVectorizer()
     tfidf_matrix = tfidf.fit_transform(df_anime['genre'].values.astype('U'))
 
-    cos_similarity = linear_kernel(tfidf_matrix, tfidf_matrix)# Set to true to get more recommendations
+    # Set to true to get more recommendations
+    cos_similarity = linear_kernel(tfidf_matrix, tfidf_matrix)
 
     correct_title = get_close_matches(
         title, movie_list, n=3, cutoff=0.3)[0]
@@ -92,7 +92,9 @@ def recommend_book(bk_name):
 
     """
     # fetch Book Index
-    dfbooks_rating = pd.read_parquet("./data/books.parquet", engine="fastparquet", colums=["User-ID","count","Book-Rating","Book-Title","Image-URL-M","Book-Author"])
+    dfbooks_rating = pd.read_parquet("./data/books.parquet", engine="fastparquet", columns=[
+                                     "User-ID", "Book-Rating", "Book-Title", "Image-URL-M", "Book-Author"])
+    dfbooks = pd.read_parquet("./data/books.parquet", engine="fastparquet")
     dfbooks_rating_count = dfbooks_rating.groupby(
         'User-ID').agg(['count'])['Book-Rating'].reset_index()
     # Count value more than 200
@@ -149,7 +151,8 @@ def recommend_comics(str):
     Returns:
         list: Returns a list of similar comics from the dataset.
     """
-    df = pd.read_parquet("./data/comics.parquet", engine="fastparquet", columns=["comic_name", "Rating"])
+    df = pd.read_parquet("./data/comics.parquet",
+                         engine="fastparquet", columns=["comic_name", "Rating"])
     # Selecting only the first 15000 comics
     n = 15000
     df = df.iloc[:n]
@@ -206,7 +209,8 @@ def recommend_game(title):
         list: Returns a list of similar games from the dataset.
 
     """
-    df = pd.read_parquet("./data/games.parquet", engine="fastparquet", columns=["genre","game_name","platform","type"])
+    df = pd.read_parquet("./data/games.parquet", engine="fastparquet",
+                         columns=["genre", "game_name", "platform", "type"])
 
     tfidf = TfidfVectorizer()
     tfidf_matrix = tfidf.fit_transform(df['genre'].values.astype('U'))
@@ -253,7 +257,8 @@ def recommend_manga(title):
 
 
     """
-    df = pd.read_parquet("./data/manga.parquet", engine="fastparquet", columns=["Genre","Name","img-link"])
+    df = pd.read_parquet("./data/manga.parquet", engine="fastparquet",
+                         columns=["Genre", "Name", "img-link"])
 
     tfidf = TfidfVectorizer()
     tfidf_matrix = tfidf.fit_transform(df['Genre'].values.astype('U'))
@@ -298,7 +303,8 @@ def recommend_movie(str):
 
 
     """
-    df_movies = pd.read_parquet('./data/movie.parquet', engine='fastparquet', columns=["genres","title"])
+    df_movies = pd.read_parquet(
+        './data/movie.parquet', engine='fastparquet', columns=["genres", "title"])
     movie_list = list(df_movies['title'])
 
     title = str
