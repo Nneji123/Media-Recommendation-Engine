@@ -14,3 +14,4 @@ spotipy==2.20.0
 locust
 streamlit
 python-decouple
+pytest
