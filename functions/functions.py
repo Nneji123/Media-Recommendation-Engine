@@ -41,7 +41,7 @@ def recommend_anime(str):
         list: Returns a list of similar anime from the dataset.
 
     """
-    df_anime = pd.read_parquet('./data/anime.parquet', engine='fastparquet')
+    df_anime = pd.read_parquet('./data/anime.parquet', engine='fastparquet', columns=["name","genre"])
     movie_list = list(df_anime['name'])
     title = str
     title = title.lower()
@@ -92,7 +92,7 @@ def recommend_book(bk_name):
 
     """
     # fetch Book Index
-    dfbooks_rating = pd.read_parquet("./data/books.parquet")
+    dfbooks_rating = pd.read_parquet("./data/books.parquet", engine="fastparquet", colums=["User-ID","count","Book-Rating","Book-Title","Image-URL-M","Book-Author"])
     dfbooks_rating_count = dfbooks_rating.groupby(
         'User-ID').agg(['count'])['Book-Rating'].reset_index()
     # Count value more than 200
