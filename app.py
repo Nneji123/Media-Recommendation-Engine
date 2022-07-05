@@ -1,8 +1,6 @@
 from fastapi import FastAPI
 from fastapi.responses import FileResponse, PlainTextResponse
 from fastapi.middleware.cors import CORSMiddleware
-from typing import Optional, List
-from pydantic import BaseModel
 import pandas as pd
 from functions.models import *
 from functions.functions import *
@@ -84,7 +82,7 @@ async def anime(data: AnimeAPI):
 # Spotify Music API Route
 
 
-@app.post("/songs", summary="This endpoint recommends songs from user input",tags=["songs"])
+@app.post("/songs", summary="This endpoint recommends songs from user input", tags=["songs"])
 async def songs(data: SongsAPI):
     """
     This endpoint takes the following input
@@ -106,7 +104,7 @@ async def songs(data: SongsAPI):
 # Books Endpoint
 
 
-@app.post("/books", summary="This endpoint recommends books from user input",tags=["books"])
+@app.post("/books", summary="This endpoint recommends books from user input", tags=["books"])
 async def music(data: BookAPI):
     """
     This endpoint takes the following input
@@ -119,7 +117,7 @@ async def music(data: BookAPI):
 # Games API Route
 
 
-@app.post("/games", summary="This endpoint recommends games from user input",tags=["games"])
+@app.post("/games", summary="This endpoint recommends games from user input", tags=["games"])
 async def games(data: GamesAPI):
     """
     This endpoint takes the following input
@@ -132,7 +130,7 @@ async def games(data: GamesAPI):
 # Manga API Route
 
 
-@app.post("/manga", summary="This endpoint recommends manga from user input",tags=["manga"])
+@app.post("/manga", summary="This endpoint recommends manga from user input", tags=["manga"])
 async def manga(data: MangaAPI):
     """
     This endpoint takes the following input
@@ -144,7 +142,7 @@ async def manga(data: MangaAPI):
 # Comics API Route
 
 
-@app.post("/comics", summary="This endpoint recommends marvel comics from user input",tags=["comics"])
+@app.post("/comics", summary="This endpoint recommends marvel comics from user input", tags=["comics"])
 async def comics(data: ComicsAPI):
     """
     This endpoint takes the following input
