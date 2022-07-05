@@ -49,7 +49,7 @@ def recommend_anime(str):
     tfidf = TfidfVectorizer()
     tfidf_matrix = tfidf.fit_transform(df_anime['genre'].values.astype('U'))
 
-    cos_similarity = linear_kernel(tfidf_matrix, tfidf_matrix, dense_output=False)# Set to true to get more recommendations
+    cos_similarity = linear_kernel(tfidf_matrix, tfidf_matrix)# Set to true to get more recommendations
 
     correct_title = get_close_matches(
         title, movie_list, n=3, cutoff=0.3)[0]
@@ -161,7 +161,7 @@ def recommend_comics(str):
     tfidf_matrix = cv.fit_transform(df['Rating'])
 
     # now compute the cosine similarity
-    cos_similarity = linear_kernel(tfidf_matrix, tfidf_matrix, dense_output=False)
+    cos_similarity = linear_kernel(tfidf_matrix, tfidf_matrix)
 
     # correcting user input spell (close match from our movie list)
     correct_title = get_close_matches(
@@ -210,7 +210,7 @@ def recommend_game(title):
 
     tfidf = TfidfVectorizer()
     tfidf_matrix = tfidf.fit_transform(df['genre'].values.astype('U'))
-    cos_similarity = linear_kernel(tfidf_matrix, tfidf_matrix, dense_output=False)
+    cos_similarity = linear_kernel(tfidf_matrix, tfidf_matrix)
 
     indices = pd.Series(df.index, index=df['game_name'])
     titles = df['game_name']
@@ -257,7 +257,7 @@ def recommend_manga(title):
 
     tfidf = TfidfVectorizer()
     tfidf_matrix = tfidf.fit_transform(df['Genre'].values.astype('U'))
-    cos_similarity = linear_kernel(tfidf_matrix, tfidf_matrix, dense_output=False)
+    cos_similarity = linear_kernel(tfidf_matrix, tfidf_matrix)
 
     indices = pd.Series(df.index, index=df['Name'])
     titles = df['Name']
@@ -308,7 +308,7 @@ def recommend_movie(str):
     tfidf_matrix = cv.fit_transform(df_movies['genres'])
 
     # now compute the cosine similarity
-    cos_similarity = linear_kernel(tfidf_matrix, tfidf_matrix, dense_output=False)
+    cos_similarity = linear_kernel(tfidf_matrix, tfidf_matrix)
 
     # correcting user input spell (close match from our movie list)
     correct_title = get_close_matches(
