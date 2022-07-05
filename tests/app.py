@@ -99,7 +99,7 @@ async def songs(data: SongsAPI):
         }
     """
     df = pd.read_parquet("./data/music.parquet", engine="fastparquet")
-    results = recommend_songs(data.music, df)
+    results = recommend_songs(data.songs, df)
     return {"data": results}
 
 
