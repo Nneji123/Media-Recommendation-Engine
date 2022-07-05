@@ -100,7 +100,7 @@ uvicorn app:app --reload --port 8000
 ```
 4. After the above steps have been carried out you can now view the documentation of the API.
 
-To visit the FastAPI documentation go to http://localhost:8000/docs with a web browser.
+To visit the FastAPI documentation go to http://localhost:8000/ with a web browser.
     
 ## Running Load Tests with Locust
 1. Make sure the API is running already from the above steps.
@@ -113,11 +113,24 @@ pip install locust
   cd tests
   locust -f locust_test_load.py
 ```
-4. Set 
+4. Set the number of IP's and address and then run the load tests
 
-
+## Running API Tests with Pytest
+1. Install the requirements
+```
+pip install -r requirements.txt
+```
+2. Change the directory
+```
+cd tests
+```
+3. Run the tests with pytest
+```
+pytest test_api.py --html=pytest_report.html --self-contained-html
+```
 
 ## Deployment
+### Deploy to Heroku
 Assuming you have git and heroku cli installed just carry out the following steps:
 
 1. Clone the repository
@@ -156,6 +169,10 @@ heroku stack:set container
 ```
 git push heroku main
 ```
+### Deploy with AWS EC2
+You can also deploy the API to AWS using a free tier EC2 instance by watching the video below:
+[![How to deploy FastAPI on AWS](https://youtube-md.vercel.app/SgSnz7kW-Ko/640/360)](https://www.youtube.com/watch?v=SgSnz7kW-Ko)
+</div>
 
 ## Contributing
 
@@ -172,9 +189,9 @@ Please adhere to this project's `code of conduct`.
 
 This API can be used to suggest recommendations for an end user such as movies, games, songs etc.
 
-#### Question 2
+#### Can the API be deployed?
 
-Answer 2
+Yes
 
 ## License
 
