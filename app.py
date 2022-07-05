@@ -12,6 +12,7 @@ app = FastAPI(
     description="""An API that utilises machine learning algorithms to recommends movies, anime, music, books, comics, manga and games.""",
     version="0.0.1",
     debug=True,
+    docs_url="/"
 )
 
 origins = ["*"]
@@ -36,14 +37,14 @@ async def favicon():
 # Home Page
 
 
-@app.get("/", response_class=PlainTextResponse)
+@app.get("/home", response_class=PlainTextResponse, tags=["home"])
 async def home():
     note = """
 Recommendation Engine API 🙌🏻
 
 This API recommends content such as games, movies, music, books and even anime!
 
-Note: add "/docs" to the URL to get the Swagger UI Docs or "/redoc"
+Note: add "/redoc" to get the complete documentation.
   """
     return note
 
@@ -53,6 +54,7 @@ Note: add "/docs" to the URL to get the Swagger UI Docs or "/redoc"
 @app.post(
     "/movie",
     summary="This endpoint recommends movies based on the movie genre and name.",
+    tags=["movies"]
 )
 async def movie(data: MovieAPI):
     """
@@ -68,6 +70,7 @@ async def movie(data: MovieAPI):
 @app.post(
     "/anime",
     summary="This endpoint recommends anime based on the anime genre and name.",
+    tags=["anime"]
 )
 async def anime(data: AnimeAPI):
     """
@@ -81,7 +84,7 @@ async def anime(data: AnimeAPI):
 # Spotify Music API Route
 
 
-@app.post("/songs", summary="This endpoint recommends songs from user input")
+@app.post("/songs", summary="This endpoint recommends songs from user input",tags=["songs"])
 async def songs(data: SongsAPI):
     """
     This endpoint takes the following input
@@ -103,7 +106,7 @@ async def songs(data: SongsAPI):
 # Books Endpoint
 
 
-@app.post("/books", summary="This endpoint recommends books from user input")
+@app.post("/books", summary="This endpoint recommends books from user input",tags=["books"])
 async def music(data: BookAPI):
     """
     This endpoint takes the following input
@@ -116,7 +119,7 @@ async def music(data: BookAPI):
 # Games API Route
 
 
-@app.post("/games", summary="This endpoint recommends games from user input")
+@app.post("/games", summary="This endpoint recommends games from user input",tags=["games"])
 async def games(data: GamesAPI):
     """
     This endpoint takes the following input
@@ -129,7 +132,7 @@ async def games(data: GamesAPI):
 # Manga API Route
 
 
-@app.post("/manga", summary="This endpoint recommends manga from user input")
+@app.post("/manga", summary="This endpoint recommends manga from user input",tags=["manga"])
 async def manga(data: MangaAPI):
     """
     This endpoint takes the following input
@@ -141,7 +144,7 @@ async def manga(data: MangaAPI):
 # Comics API Route
 
 
-@app.post("/comics", summary="This endpoint recommends marvel comics from user input")
+@app.post("/comics", summary="This endpoint recommends marvel comics from user input",tags=["comics"])
 async def comics(data: ComicsAPI):
     """
     This endpoint takes the following input

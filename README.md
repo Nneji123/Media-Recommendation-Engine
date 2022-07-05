@@ -31,17 +31,16 @@
 </p>
 
 ## Table of Contents
-- [Sections](#sections)
-- [Getting Started](#getting-started)
-- [How to Use](#how-to-use)
-- [Linking portfolio to GitHub](#linking-portfolio-to-github)
-- [Linking blogs section to Medium](#linking-blogs-section-to-medium)
-- [Change and Customize](#change-and-customize-every-section-according-to-your-need)
+- [Features](#features)
+- [API Reference](#api-reference)
+- [Screenshots](#screenshots)
+- [Demo](#demo)
+- [Run on Local Machine](#running-on-local-machine-:computer:)
 - [Deployment](#deployment)
+- [Contributing](#contributing)
 - [Technologies Used](#technologies-used)
-- [Illustrations](#illustrations)
-- [For the Future](#for-the-future)
-- [Contributors](#project-maintainers)
+- [FAQ](#faq)
+- [License](#license)
 
 ## Features
 
@@ -52,10 +51,10 @@
 
 ## API Reference
 
-#### Get all items
+#### Go to home directiory
 
 ```http
-  GET /api/items
+  GET /api/home
 ```
 
 | Parameter | Type     | Description                |
