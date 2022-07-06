@@ -9,8 +9,7 @@ app = FastAPI(
     title="Recommendation Engine API",
     description="""An API that utilises machine learning algorithms to recommends movies, anime, music, books, comics, manga and games.""",
     version="0.0.1",
-    debug=True,
-    docs_url="/"
+    debug=True
 )
 
 origins = ["*"]
@@ -35,7 +34,7 @@ async def favicon():
 # Home Page
 
 
-@app.get("/home", response_class=PlainTextResponse, tags=["home"])
+@app.get("/", response_class=PlainTextResponse, tags=["home"])
 async def home():
     note = """
 Recommendation Engine API 🙌🏻
