@@ -13,4 +13,4 @@ COPY . /app
 EXPOSE 8501
 
 ENTRYPOINT ["streamlit","run"]
-CMD ["streamlit_app.py"]
+CMD ["Home.py"]
