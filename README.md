@@ -1,6 +1,3 @@
-<p align="center">
-    <h1 align ="center"> Media Recommendation Engine</h1>
-</p>
 <a href="https://codecov.io/gh/tiangolo/fastapi" target="_blank">
     <img src="https://cdn.activestate.com/wp-content/uploads/2019/12/RecommendationEngine.png" alt="Coverage">
 </a>
