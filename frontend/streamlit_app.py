@@ -24,14 +24,14 @@ try:
 
     # Main panel setup
     display_app_header(main_txt='Media Recommendation App',
-                       sub_txt='Clean, describe, visualise and select data for AI models')
+                       sub_txt='Get suggestions on what to read, watch or listen to next using this recommendations web app!')
 
     st.markdown("""---""")
 
     st.write('Welcome to the MRA! An app for getting media recommendations!')
 
-    st.write('Please select the data format/app section you want to use below. ',
-             'Due to the multifunctionality of this app, we have split it into five.',
+    st.write('Please select the recommendation app you would like to use from the sidebar!',
+             'Due to the multifunctionality of this app, we have split it into 7 different apps.',
              'This is the main app. Have fun!')
 
     # provide options to user to navigate to other dqw apps
@@ -39,9 +39,9 @@ try:
                        '[Music Recommendations 🎶](https://share.streamlit.io/soft-nougat/dqw-ivves_structured/main/app.py)',
                        '[Game Recommendations 🎮](https://share.streamlit.io/soft-nougat/dqw-ivves_audio/main/app.py)',
                        '[Anime Recommendations 📚](https://share.streamlit.io/soft-nougat/dqw-ivves_text/main/app.py)',
-                       '[Comics Recommendations 🎶](https://share.streamlit.io/soft-nougat/dqw-ivves_audio/main/app.py)',
-                       '[Manga Recommendations 🎶](https://share.streamlit.io/soft-nougat/dqw-ivves_audio/main/app.py)',
-                       '[Book Recommendations 🎶](https://share.streamlit.io/soft-nougat/dqw-ivves_audio/main/app.py)')
+                       '[Comics Recommendations 📚](https://share.streamlit.io/soft-nougat/dqw-ivves_audio/main/app.py)',
+                       '[Manga Recommendations 📚](https://share.streamlit.io/soft-nougat/dqw-ivves_audio/main/app.py)',
+                       '[Book Recommendations 📚](https://share.streamlit.io/soft-nougat/dqw-ivves_audio/main/app.py)')
     st.markdown("""---""")
 
     intro_text = """
