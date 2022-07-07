@@ -1,6 +1,7 @@
 import streamlit as st
 import json
 import requests as re
+import pandas as pd
 
 try:
 
@@ -61,5 +62,10 @@ res = re.post(
     f"http://backend.docker:8000/anime", json=values)
 json_str = json.dumps(res.json())
 resp = json.loads(json_str)
+resp = list(resp.values())
+resp = pd.DataFrame(resp, index=None).T
+st.write("These are the anime you should watch next:")
+resp = st.dataframe(resp)
 
-st.write(f"""### These are the anime you should watch next: {resp[0]}.""")
+
+#st.write(f"These are the anime you should watch next: {resp}.")
