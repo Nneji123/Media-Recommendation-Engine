@@ -162,6 +162,5 @@ cython_debug/
 # Untrack some unneeded files
 .vercel
 kaggle.json
-.gitpod.yml
 .vscode/
 *.pem

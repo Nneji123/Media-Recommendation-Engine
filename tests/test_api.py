@@ -8,7 +8,7 @@ client = TestClient(app)
 def test_movie():
     response = client.post(
         "/movie",
-        json={"movie": "Toy Story"},
+        json={"movie": "Toy Story"}
     )
     assert response.status_code == 200
     assert response.json() == {
@@ -35,7 +35,7 @@ def test_movie():
 def test_anime():
     response = client.post(
         "/anime",
-        json={"movie": "Toy Story"},
+        json={"movie": "Toy Story"}
     )
     assert response.status_code == 200
     assert response.json() == {
@@ -62,7 +62,7 @@ def test_anime():
 def test_book():
     response = client.post(
         "/anime",
-        json={"book": "1984"},
+        json={"book": "1984"}
     )
     assert response.status_code == 200
     assert response.json() == {
@@ -124,7 +124,7 @@ def test_book():
 def test_game():
     response = client.post(
         "/game",
-        json={"game": "Call of Duty"},
+        json={"game": "Call of Duty"}
     )
     assert response.status_code == 200
     assert response.json() == {
@@ -196,7 +196,7 @@ def test_game():
 def test_manga():
     response = client.post(
         "/manga",
-        json={"manga": "One Piece"},
+        json={"manga": "One Piece"}
     )
     assert response.status_code == 200
     assert response.json() == {
@@ -269,7 +269,7 @@ def test_music_good():
     response = client.post(
         "/songs",
         json={"songs": [{"name": "Come As You Are", "year": 1991}, {
-            "name": "The Sign", "year": 1994}]},
+            "name": "The Sign", "year": 1994}]}
     )
     assert response.status_code == 200
     assert response.json() == {
@@ -326,7 +326,7 @@ def test_music_good():
 def test_comic():
     response = client.post(
         "/comic",
-        json={"comic": "Iron Man"},
+        json={"comic": "Iron Man"}
     )
     assert response.status_code == 200
     assert response.json() == {
