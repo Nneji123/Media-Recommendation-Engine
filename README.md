@@ -78,6 +78,9 @@ Takes two numbers and returns the sum.
 
 
 ## Screenshots
+![Screenshot (148)](https://user-images.githubusercontent.com/101701760/177749665-67f2ad15-7514-4218-b419-4fd0e717d509.png)
+![Screenshot (149)](https://user-images.githubusercontent.com/101701760/177749677-6fd3860f-6db3-4d14-be28-55233b45d15d.png)
+
 
 ## Demo
 
