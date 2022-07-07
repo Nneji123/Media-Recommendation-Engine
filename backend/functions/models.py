@@ -11,7 +11,7 @@ class AnimeAPI(BaseModel):
 
 
 class SongsAPI(BaseModel):
-    music: list
+    songs: list
 
 
 class BookAPI(BaseModel):

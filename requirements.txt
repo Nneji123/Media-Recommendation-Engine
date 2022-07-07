@@ -15,3 +15,4 @@ locust
 streamlit
 python-decouple
 pytest
+pytest-html
