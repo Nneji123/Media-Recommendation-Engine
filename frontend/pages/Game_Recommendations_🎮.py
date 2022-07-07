@@ -2,12 +2,12 @@ import streamlit as st
 import json
 import requests as re
 
-st.title("Anime Recommendations Web App")
+st.title("Games Recommendations Web App")
 
 
 st.write("""
 ## About
-This App using machine learning algorithms to suggest what anime you should watch next!
+This App using machine learning algorithms to suggest what Games you should play next!
 
 The API was built with FastAPI and can be found [here.](https://credit-fraud-ml-api.herokuapp.com/)
 
@@ -15,12 +15,12 @@ The notebook, model and documentation(Dockerfiles, FastAPI script, Streamlit App
 
 """)
 
-input_query = st.text_input("Input the Anime you last watched: ")
-values = {"anime": input_query}
+input_query = st.text_input("Input the game you last played: ")
+values = {"game": input_query}
 
 res = re.post(
-    f"http://backend.docker:8000/anime", json=values)
+    f"http://backend.docker:8000/games", json=values)
 json_str = json.dumps(res.json())
 resp = json.loads(json_str)
 
-st.write(f"""### These are the anime you should watch next: {resp[0]}.""")
+st.write(f"""### These are the Games you should play next: {resp[0]}.""")

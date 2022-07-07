@@ -16,7 +16,7 @@ try:
     from streamlit_functions.helper_functions import *
 
     # app design
-    app_meta('📊')
+    app_meta('🖼️')
     set_bg_hack('./images/background.png')
 
     # hide warning for st.pyplot() deprecation
