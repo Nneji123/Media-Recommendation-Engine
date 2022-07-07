@@ -6,10 +6,7 @@ client = TestClient(app)
 
 
 def test_movie():
-    response = client.post(
-        "/movie",
-        json={"movie": "Toy Story"}
-    )
+    response = client.post("/movie", json={"movie": "Toy Story"})
     assert response.status_code == 200
     assert response.json() == {
         "data": [
@@ -27,16 +24,13 @@ def test_movie():
             "Turbo (2013)",
             "Aladdin (1992)",
             "Boxtrolls, The (2014)",
-            "Toy Story Toons: Hawaiian Vacation (2011)"
+            "Toy Story Toons: Hawaiian Vacation (2011)",
         ]
     }
 
 
 def test_anime():
-    response = client.post(
-        "/anime",
-        json={"movie": "Death Note"}
-    )
+    response = client.post("/anime", json={"movie": "Death Note"})
     assert response.status_code == 200
     assert response.json() == {
         "data": [
@@ -54,32 +48,23 @@ def test_anime():
             "Zankyou no Terror",
             "Imawa no Kuni no Alice (OVA)",
             "Shigofumi",
-            "Kara no Kyoukai 4: Garan no Dou"
+            "Kara no Kyoukai 4: Garan no Dou",
         ]
     }
 
 
 def test_book():
-    response = client.post(
-        "/anime",
-        json={"book": "1984"}
-    )
+    response = client.post("/anime", json={"book": "1984"})
     assert response.status_code == 200
 
 
 def test_game():
-    response = client.post(
-        "/game",
-        json={"game": "Call of Duty"}
-    )
+    response = client.post("/game", json={"game": "Call of Duty"})
     assert response.status_code == 200
 
 
 def test_manga():
-    response = client.post(
-        "/manga",
-        json={"manga": "Otona No Mondai"}
-    )
+    response = client.post("/manga", json={"manga": "Otona No Mondai"})
     assert response.status_code == 200
 
 
@@ -89,22 +74,30 @@ def test_music_bad():
         json={"music": [{"name": "Come As You Are", "year": 1991}]},
     )
     assert response.status_code == 422
-    assert response.json() == {'detail': [
-        {'loc': ['body', 'songs'], 'msg': 'field required', 'type': 'value_error.missing'}]}
+    assert response.json() == {
+        "detail": [
+            {
+                "loc": ["body", "songs"],
+                "msg": "field required",
+                "type": "value_error.missing",
+            }
+        ]
+    }
 
 
 def test_music_good():
     response = client.post(
         "/songs",
-        json={"songs": [{"name": "Come As You Are", "year": 1991}, {
-            "name": "The Sign", "year": 1994}]}
+        json={
+            "songs": [
+                {"name": "Come As You Are", "year": 1991},
+                {"name": "The Sign", "year": 1994},
+            ]
+        },
     )
     assert response.status_code == 200
 
 
 def test_comic():
-    response = client.post(
-        "/comic",
-        json={"comic": "Iron Man"}
-    )
+    response = client.post("/comic", json={"comic": "Iron Man"})
     assert response.status_code == 200
