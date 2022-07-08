@@ -3,12 +3,10 @@ import os
 from decouple import config
 from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy
-import difflib
 from collections import defaultdict
 from difflib import get_close_matches
 import pandas as pd
 import numpy as np
-from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
