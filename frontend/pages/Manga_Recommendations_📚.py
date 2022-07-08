@@ -24,10 +24,6 @@ try:
         ## About
         This App using machine learning algorithms to suggest what Manga you should read next!
 
-        The API was built with FastAPI and can be found [here.](https://credit-fraud-ml-api.herokuapp.com/)
-
-        The notebook, model and documentation(Dockerfiles, FastAPI script, Streamlit App script) are available on [GitHub.](https://github.com/Nneji123/Media-Recommendation-Engine)        
-
         """)
 
     # provide options to user to navigate to other dqw apps
@@ -46,13 +42,13 @@ try:
 except KeyError:
     st.error("Please select a key value from the dropdown to continue.")
 
-except ValueError:
-    st.error(
-        "Oops, something went wrong. Please check previous steps for inconsistent input.")
+# except ValueError:
+#     st.error(
+#         "Oops, something went wrong. Please check previous steps for inconsistent input.")
 
 except TypeError:
     st.error(
-        "Oops, something went wrong. Please check previous steps for inconsistent input.")
+        "Thanks for using this App.")
 
 
 input_query = st.text_input("Input the Manga you last readed: ")
