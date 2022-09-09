@@ -8,7 +8,7 @@ scikit_learn==1.1.1
 uvicorn
 httptools
 gunicorn
-numpy==1.23.1
+numpy==1.23.3
 Pillow==9.2.0
 spotipy==2.20.0
 locust
