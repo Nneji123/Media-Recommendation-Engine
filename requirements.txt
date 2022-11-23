@@ -1,5 +1,5 @@
 fastapi==0.79.0
-pandas==1.4.3
+pandas==1.5.2
 pyarrow
 fastparquet
 pydantic==1.9.1
